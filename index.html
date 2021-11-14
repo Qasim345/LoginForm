@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=7,8,edge" />
+  <meta name="description" content="Login form with recaptcha security api using html, css, js by Qasim Sarwari." />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>Login</title>
+</head>
+<body>
+  <form class="form">
+    <div class="cir1"></div>
+    <h1>Login</h1>
+    <p class="txt">
+      Login with username and password
+    </p>
+    <div class="input">
+      <input type="text" name="username" value="" autocomplete="off" required />
+      <label>Username</label>
+    </div>
+    <div class="input">
+      <input type="password" name="password" id="pass" required />
+      <label>Password</label>
+      <span id="eye">visibility_off</span>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LdPUvUcAAAAAGWBUXNFc5KUjpilW7Zb9qUvH3fk"></div>
+    <button type="submit">Log In</button>
+    <p class="s">
+      Don't have an account? <a href="sign.html">SignUp</a>
+    </p>
+  </form>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    // get type of input
+    var pass = document.getElementById("pass");
+    // by Qasim Sarwari
+    $("#eye").click(()=> {
+      if (pass.type == "password") {
+        pass.type = "text";
+        $("#eye").html("visibility").css("color", "#1876f3");
+      } else {
+        pass.type = "password";
+        $("#eye").html("visibility_off").css("color", "#c6d4e3");
+      }
+    });
+    // submit form
+    $(".form").submit(()=> {
+      $("button").html("<div class='loader'></div>")
+    })
+  </script>
+</body>
+</html>
