@@ -29,6 +29,29 @@ body {
   background: var(--bg1);
   height: 100vh;
 }
+.loader-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+.loader-container .pre-loader{
+  width: 50px;
+  height: 50px;
+  border: 3px solid #eee;
+  border-right-color: var(--col);
+  animation: anim 1s linear infinite;
+}
+@keyframes anim{
+  100%{
+    transform: rotate(360deg);
+  }
+}
 .form {
   position: relative;
   width: 320px;
